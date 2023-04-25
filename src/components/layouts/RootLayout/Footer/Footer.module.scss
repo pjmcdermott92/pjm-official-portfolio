@@ -1,0 +1,17 @@
+.siteFooter {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: var(--footer-height);
+	background-color: var(--color-medium);
+	color: var(--color-white);
+
+	& > div {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		text-align: center;
+	}
+}

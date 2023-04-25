@@ -1,0 +1,108 @@
+@function setTextColor($color) {
+    @if (lightness($color) > 60) {
+        @return $color-light;
+    } @else {
+        @return $color-white;
+    }
+}
+
+@mixin set-background($color) {
+    background-color: $color;
+    color: setTextColor($color);
+}
+
+@mixin lighten-background($color, $percent: 30%) {
+    background-color: lighten($color, $percent);
+}
+
+$spaces: (1, 2, 3, 4, 5);
+
+@each $value in $spaces {
+    .m-#{$value} {
+        margin: #{$value}rem;
+    }
+
+    .p-#{$value} {
+        padding: #{$value}rem;
+    }
+
+    .mx-#{$value} {
+        margin: 0 #{$value}rem;
+    }
+
+    .px-#{$value} {
+        padding: 0 #{$value}rem;
+    }
+
+    .my-#{$value} {
+        margin: #{$value}rem 0;
+    }
+
+    .py-#{$value} {
+        padding: #{$value}rem 0;
+    }
+
+    .mt-#{$value} {
+        margin-top: #{$value}rem;
+    }
+
+    .pt-#{$value} {
+        padding-top: #{$value}rem;
+    }
+
+    .mb-#{$value} {
+        margin-bottom: #{$value}rem;
+    }
+
+    .pb-#{$value} {
+        padding-bottom: #{$value}rem;
+    }
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ms-auto {
+    margin-left: auto;
+}
+
+.me-auto {
+    margin-right: auto;
+}
+
+%heading {
+	margin-top: 0;
+	margin-bottom: .5rem;
+	color: var(--heading-color, inherit);
+}
+
+h1 {
+    @extend %heading;
+    font-size: clamp(1.8rem, 10vw, 3rem);
+}
+
+h2 {
+    @extend %heading;
+    font-size: clamp(1.4rem, 10vw, 2.6rem);
+}
+
+h3 {
+    @extend %heading;
+    font-size: clamp(1.2rem, 10vw, 2.2rem);
+}
+
+h4 {
+    @extend %heading;
+    font-size: clamp(1.2rem, 10vw, 1.6rem);
+}
+
+h5 {
+    @extend %heading;
+    font-size: clamp(1.2rem, 10vw, 1.2rem);
+}
+
+.text-center {
+    text-align: center;
+}

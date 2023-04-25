@@ -1,0 +1,70 @@
+.btn {
+    --btn-scale: 1;
+
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: calc(var(--btn-padding-y, 0.5rem) * var(--btn-scale))
+        calc(var(--btn-padding-x, 0.75rem) * var(--btn-scale) * 2);
+    font: {
+        family: var(--btn-font-family, inherit);
+        size: calc(var(--btn-font-size, inherit) * var(--btn-scale));
+        weight: var(--btn-font-weight, inherit);
+    }
+    line-height: var(--btn-line-height, inherit);
+    background-color: var(--color-light);
+    color: var(--color-white);
+    cursor: pointer;
+    outline: none;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    transition: 250ms ease-in-out;
+
+    &:hover,
+    &:focus {
+        background: lighten($color-light, 10%);
+    }
+
+    &:disabled,
+    &.disabled {
+        opacity: 0.55;
+        cursor: not-allowed;
+    }
+
+    // VARIANT BUTTONS
+    @each $color, $value in $colors {
+        &.btn-#{$color} {
+            @include set-background($value);
+
+            &:hover,
+            &:focus {
+                background-color: lighten($value, 10%);
+            }
+        }
+
+        // Outline Buttons
+        &.btn-outline-#{$color} {
+            background-color: transparent;
+            color: $value;
+            border-color: $value;
+
+            &:hover {
+                @include set-background($value);
+            }
+        }
+    }
+
+    // Sizing
+    &.btn-lg {
+        --btn-scale: 1.5;
+    }
+
+    &.btn-sm {
+        --btn-scale: .65;
+    }
+
+    &.btn-100 {
+        width: 100%;
+    }
+}
