@@ -61,24 +61,43 @@ svg {
     text-align: center;
 }
 
+.card-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+    margin: 4rem 0;
+
+    @media (max-width: 999px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+    }
+}
+
 .card {
-    background-color: #FFF;
-    box-shadow: 0 0 32px 1px rgba(0,0,0,0.15);
+    background-color: #fff;
+    box-shadow: 0 0 32px 1px rgba(0, 0, 0, 0.15);
     border-radius: 20px;
     overflow: hidden;
 
     .card__body {
-        padding: .5rem;
+        padding: 0.5rem;
     }
 
     .card__img {
+        position: relative;
         width: 100%;
         overflow: hidden;
 
         img {
-            width: 100%;
-            object-fit: cover;
-            object-position: center;
+            width: 100% !important;
+            position: relative !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            object-position: top left;
         }
     }
 }
