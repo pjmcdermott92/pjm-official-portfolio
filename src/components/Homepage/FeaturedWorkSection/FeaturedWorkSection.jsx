@@ -87,6 +87,11 @@ export default function FeaturedWorkSection() {
                 ) : (
                     <p>No projects to show.</p>
                 )}
+                <div className='text-center'>
+                    <Link href='/portfolio' className='btn btn-lg btn-outline-dark'>
+                        More Projects
+                    </Link>
+                </div>
             </div>
         </section>
     );
