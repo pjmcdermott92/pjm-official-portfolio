@@ -70,7 +70,7 @@ export default function FeaturedWorkSection() {
                                             className='btn btn-sm btn-outline-light'
                                         >
                                             <FaGithub />
-                                            View on Githb
+                                            View on Github
                                         </Link>
                                         <Link
                                             href={project.website_url}

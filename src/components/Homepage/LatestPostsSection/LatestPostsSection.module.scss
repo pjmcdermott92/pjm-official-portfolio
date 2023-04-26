@@ -1,0 +1,38 @@
+.latestPosts {
+    margin: 0 0 3rem;
+}
+
+.postCard {
+	min-height: 20rem;
+	padding: 1rem 1.5rem;
+
+	h2 {
+		font-size: 2rem;
+	}
+
+	p {
+		font-size: 1.2rem;
+		line-height: 1.5;
+		margin: 0.25rem;
+	}
+
+	.postMeta {
+		font: {
+			size: 1.2rem;
+			weight: 200;
+		}
+		color: rgba(0, 0, 0, 0.45);
+	}
+
+	.postCategories {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		flex-wrap: wrap;
+		padding: 1rem 0;
+	}
+
+	.readMoreLink {
+		font-size: 1.2rem;
+	}
+}
